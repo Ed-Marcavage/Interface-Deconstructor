@@ -20,7 +20,7 @@ export const BodyWrapper = styled.div`
 export default function AppBody({ children }: { children: React.ReactNode }) {
   return (
     <BodyWrapper>
-      {/* <NavigationTabs /> */}
+      <NavigationTabs />
       <>{children}</>
     </BodyWrapper>
   );

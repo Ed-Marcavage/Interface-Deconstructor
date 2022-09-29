@@ -8,12 +8,12 @@ import {
   Link as HistoryLink,
   RouteComponentProps,
 } from "react-router-dom";
-
 import useBodyKeyDown from "../../hooks/useBodyKeyDown";
+
 import { CursorPointer } from "../../theme";
 import { ArrowLeft } from "react-feather";
 import { RowBetween } from "../Row";
-// import QuestionHelper from '../QuestionHelper'
+// import QuestionHelper from "../QuestionHelper";
 
 const tabOrder = [
   {
@@ -61,12 +61,12 @@ const StyledNavLink = styled(NavLink).attrs({
     font-weight: 500;
     color: ${({ theme }) => theme.text1};
   }
-
-  :hover,
-  :focus {
-    color: ${({ theme }) => darken(0.1, theme.text1)};
-  }
 `;
+
+// :hover,
+// :focus {
+//   color: ${({ theme }) => darken(0.1, theme.text1)};
+// }
 
 const ActiveText = styled.div`
   font-weight: 500;
@@ -84,7 +84,7 @@ function NavigationTabs({
   const { t } = useTranslation();
 
   const navigate = useCallback(
-    (direction: number) => {
+    (direction: any) => {
       const tabIndex = tabOrder.findIndex(({ regex }) => pathname.match(regex));
       history.push(
         tabOrder[(tabIndex + tabOrder.length + direction) % tabOrder.length]
